@@ -31,11 +31,25 @@
 
     -循环语句
 
-for : for 循环，使用的最多
+for : for 循环，使用的最多 
+    for(初始化部分; 条件判断部分; 调整部分)
+        循环语句;
+int main()
+{
+    int i = 0;
+    for(i=1; i<=10; i++)
+    {
+        if(i == 5)
+            continue;
+        printf("%d", i);//打印结果:1234678910(没 5)
+    }
+    return 0;
+}
+
 do ：循环语句的前提条件循环体
 while：循环语句的循环条件
 break : 跳出当前循环
-continue：结束当前循环，开始下一轮循环
+continue：结束当前循环，开始下一轮循环(回到开头)
 
     -条件语句
 
@@ -84,41 +98,41 @@ int main()
 //     -开关语句
 
 // switch: 用于开关语句
-int main()
-{
-    int day = 0;
-    scanf("%d", &day);//&:取地址//test:3
-    switch(day)
-    {
-        case 1:
-            printf("星期一\n");
-            break;
-        case 2:
-            printf("星期二\n");
-            break;
-        case 3:
-            printf("星期三\n");
-            break;
-        case 4:
-            printf("星期四\n");
-            break;
-        case 5:
-            printf("星期五\n");
-            break;
-        case 6:
-            printf("星期六\n");
-            break;
-        case 7:
-            printf("星期七\n");
-            break;
+// int main()
+// {
+//     int day = 0;
+//     scanf("%d", &day);//&:取地址//test:3
+//     switch(day)
+//     {
+//         case 1:
+//             printf("星期一\n");
+//             break;
+//         case 2:
+//             printf("星期二\n");
+//             break;
+//         case 3:
+//             printf("星期三\n");
+//             break;
+//         case 4:
+//             printf("星期四\n");
+//             break;
+//         case 5:
+//             printf("星期五\n");
+//             break;
+//         case 6:
+//             printf("星期六\n");
+//             break;
+//         case 7:
+//             printf("星期七\n");
+//             break;
 
-    }
-}
+//     }
+// }
 
 
 
 // case：开关语句的另外一种分支
-// default : 开关语句中的其他分支
+// default : 开关语句中的其他分支(放哪都行,但一个switch语句内,只能出现一条default)
 
 //     -返回语句
 // return ：子程序返回语句（可以带参数，也看不带参数） 
@@ -140,4 +154,51 @@ volatile : 说明变量在程序执行中可被隐含地改变
  */
 
 
+/*符号:
+i+=m -> i = i+m
+
+
+ */
+
 //分支语句和循环语句(由;隔开的就是语句):
+
+
+/* int main()
+{
+    int get = 0;
+    int ch = 0;
+    char password[20] = {0};
+    printf("请输入密码:>");
+    scanf("%s", password);//%s(打印类型为字符串)//输入密码,并存放在password数组中
+    //now:缓冲区还剩一个(\n)- 输入完密码后的回车键(确认输完后才会回车)
+    //so we can:读取一下(\n)
+    while((ch = getchar()) != '\n')// !=:判断等于
+    {
+        ;//空语句(don't hv to do anything)
+    }
+    printf("请确认密码(Y/N):>");
+    get = getchar();//Y/N
+    if(get == 'Y')
+    {
+        printf("确认成功\n");
+    }
+    else 
+    {
+        printf("已放弃确认\n");
+    }
+    return 0;
+} */
+
+/* int main()
+{
+    int ch = 0;
+    while((ch = getchar()) != EOF)
+    {
+        if(ch<'0' || ch>'9')// || : OR
+            continue;
+        putchar(ch);
+    }
+    return 0;
+} */
+
+
