@@ -45,9 +45,32 @@ int main()
     }
     return 0;
 }
-
+//for循环的变种:
+int main()
+{
+    for(;;)//for循环的初始化、调整、判断 都可省略，but 判断部分如果省略，那判断条件就是：恒为正
+    {
+        printf("hehe\n");//一直打印hehe
+    }
+return 0;
+}
 do ：循环语句的前提条件循环体
 while：循环语句的循环条件
+
+do...while:先做do 后循环
+int main()
+{
+    int i = 1;
+    //1~10
+    do//先做了 do 里面的语句
+    {
+        printf("%d ", i);
+        i++;
+    }
+    while (i<=10);//这里要加 ;//上面下来的数据<=10 就回到头(its a 循环)
+    return 0;
+}
+
 break : 跳出当前循环
 continue：结束当前循环，开始下一轮循环(回到开头)
 
@@ -201,4 +224,8 @@ i+=m -> i = i+m
     return 0;
 } */
 
-
+int main()
+{
+    
+    for(i=1;;)
+}
