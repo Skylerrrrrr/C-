@@ -1,5 +1,7 @@
 #include <stdio.h>//这个命令就是会告诉预处理器(cpp)去读系统头文件stdio.h中的内容, and then把它插入到程序作为文本-->first.i
 #include <string.h>
+#include <windows.h>
+#include <stdlib.h>
 
 // int main()//main是一个函数名//int表示的是main函数返回一个整数
 // {
@@ -50,7 +52,7 @@ int main()
 {
     for(;;)//for循环的初始化、调整、判断 都可省略，but 判断部分如果省略，那判断条件就是：恒为正
     {
-        printf("hehe\n");//一直打印hehe
+        printf("呵呵\n");//一直打印呵呵
     }
 return 0;
 }
@@ -224,8 +226,147 @@ i+=m -> i = i+m
     return 0;
 } */
 
+/* 求几个阶乘的和:
+
 int main()
 {
+    int i = 0;
+    int n = 0;
+    int Ans = 1;
+    //scanf("%d", &n);//不考虑溢出的情况
+    int sum = 0;
+    for(n=1; n<=3; n++)
+    {
+        Ans = 1;
     
-    for(i=1;;)
+        for(i=1; i<=n; i++)
+        {
+            Ans = Ans*i;
+        }
+        sum+=Ans;
+    }
+
+    printf("sum = %d\n", sum);
+    return 0;
 }
+
+优化后:
+int main()
+{
+    //int i = 0;
+    int n = 0;
+    int Ans = 1;
+    //scanf("%d", &n);//不考虑溢出的情况
+    int sum = 0;
+    for(n=1; n<=10; n++)
+    {
+        Ans = Ans*n;
+        sum+=Ans;
+    }
+
+    printf("sum = %d\n", sum);
+    return 0;
+} */
+
+
+/* 写一个代码:在arr数组(有序的)中找到 7
+//折半查找算法/二分查找算法
+//       1 2 3 4 5 6 7 8 9 10
+// 下标: 0 1 2 3 4 5 6 7 8  9 //靠下标找,因为这是一直顺下去的
+int main()
+{
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int k = 7;//想找7的位置
+    int sz = sizeof(arr)/sizeof(arr[0]);//求元素个数
+    int left = 0;//左下标
+    int right = sz-1;//右下标(元素个数减一)
+   while(left <= right)
+   {
+    int mid = (right+left)/2;
+            if(arr[mid] > k)
+        {
+            right = mid-1;
+        }
+        else if(arr[mid] < k)
+        {
+            left = mid+1;
+        }
+        else
+        {
+            printf("找到了,下标是: %d\n", mid);
+            break;//因为找到了就不用再继续找了
+        }
+   }
+    if(left>right)
+    {
+        printf("找不到\n");
+    }
+    return 0;
+} */
+
+
+/* int main()
+{
+    //
+    //welcome to bit!!!!!!
+    //####################
+    //w##################!
+    //we################!!
+    //wel##############!!!
+    //...
+    //welcome to bit!!!!!!
+    //
+    
+    char arr1[] = "welcome to bit!!!!!!";
+    char arr2[] = "####################";
+    int left = 0;
+    //int right = sizeof(arr1)/sizeof(arr1[0])-2//所以是减2(把\0的减了)
+    //char arr[] = "abc";
+    //[a  b  c \0]//这跟刚刚的数组不一样, 这是字符, 要小心!
+    // 0  1  2  3//下标
+    //OR:
+    int right = strlen(arr1)-1;
+
+    while(left<=right)
+    {
+        arr2[left] = arr1[left];
+        arr2[right] = arr1[right];
+        printf("%s\n", arr2);
+        //每打印一次 休息一秒:
+        Sleep(1000);//1000ms = 1s //Sleep 要大写!
+        system("cls");//执行系统命令的一个函数 - cls - 清空屏幕
+        left++;
+        right--;
+    }
+    printf("%s\n", arr2);
+    return 0;
+
+} */
+
+
+/* //模拟用户登录情景,只能登入三次(if 三次都错了,then推出程序, if密码正确就显示登陆成功)
+int main()
+{
+    int i = 0;
+    char password[20] = {0};
+
+    for(i=0; i<3; i++)//不是 i<=3 因为三次的话 是不能继续进行循环了
+    {
+        printf("请输入密码:>");
+        scanf("%s", password);
+        if (strcmp(password, "123456")==0)// == 这个不能用来比较两个字符串是否相等(正确密码与输入的密码), 应该用一个库函数: strcmp
+        {
+            printf("登入成功\n");
+            break;
+        }
+        else
+        {
+            printf("密码错误\n");
+        }
+    }
+    if(i==3)
+    {
+        printf("三次密码均错误,退出程序");
+    }
+    return 0;
+} */
