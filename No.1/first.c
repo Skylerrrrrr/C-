@@ -2,6 +2,7 @@
 #include <string.h>
 #include <windows.h>
 #include <stdlib.h>
+#include <math.h>
 
 // int main()//main是一个函数名//int表示的是main函数返回一个整数
 // {
@@ -370,3 +371,143 @@ int main()
     }
     return 0;
 } */
+
+
+/* //把輸入的三个数字排序(从大到小)
+int main()
+{
+    int a = 0;
+    int b = 0;
+    int c = 0;
+    scanf("%d %d %d", &a, &b, &c);//输入的时候也要加空格
+    //把a存最大的数
+    if(a<b)
+    {
+       int temp = a;
+       a = b;
+       b = temp;
+    }
+    if(a<c)
+    {
+        int temp = a;
+        a = c;
+        c = temp;
+    }
+    if(b<c)
+    {
+        int temp = b;
+        b = c;
+        c = temp;
+    }
+
+    printf("%d%d%d\n", a, b, c);
+    return 0;
+} */
+
+
+/* //打印1~100的三的倍数:
+int main()
+{
+    int i = 0;
+    for(i = 0; i<=100; i++)
+    {
+        if(i%3 == 0)//被3整除:1~100的三的倍数
+        {
+            printf("%d\n", i);
+        }
+    }
+    return 0;
+} */
+
+/* //求两个数的最大公约数
+int main()
+{
+    int m = 0;
+    int n = 0;
+    int r = 0;
+    scanf("%d %d", &m, &n);
+    while(m%n)
+    {
+        r = m%n;
+        //m = n;
+        n = r;
+    }
+    printf("%d\n", n);
+    return 0;
+} */
+
+/* //打印1000~2000年的闰年(閏年是指該年有366日)
+        // int main()
+        // {
+        //     int year = 0;
+        //     int count = 0;//计算有多少个
+        //     for(year = 1000; year <= 2000; year ++)
+        //     {
+        //         //判断year是不是闰年
+        //         //1.能被4整除 并且不能被100整除   or: 能被400整除
+        //         if(year%4 == 0 && year%100 != 0)// != : 不等于
+        //         {
+        //             printf("%d年\n", year);
+        //             count++;
+        //         }
+        //         else if(year%400 == 0)
+        //         {
+        //             printf("%d年\n", year);
+        //             count++;
+        //         }
+        //     }
+        //     printf("\ncount = 有%d个\n", count);
+        //     return 0;
+        // }
+//OR更简短的:
+ int main()
+{
+    int year = 0;
+    int count = 0;//计算有多少个
+    for(year = 1000; year <= 2000; year ++)
+    {
+        if(((year%4==0) && (year%100 !=0)) || (year%400 == 0))// ||:或者
+        {
+            printf("%d年\n", year);
+            count++;
+        }
+    }
+        printf("\ncount = 有%d个\n", count);
+        return 0;
+} */
+
+/* //打印100~200之间的素数/质数:
+int main()
+{
+    int i = 0;
+    int count = 0;
+    for(i=100; i<=200; i++)
+    {
+        int j = 0;
+        for(j=2; j<=sqrt(i); j++)//sqrt - 开平方的数学库函数
+        {
+            if(i%j==0)
+            {
+                break;
+            }
+        }
+        if(j>sqrt(i))
+        {
+            count++;
+            printf("%d\n", i);
+        }
+    }
+    printf("\ncount = %d个\n", count);
+    return 0;
+} */
+
+//数1~100的所有整数中出现多少个9:
+int main()
+{
+    int i = 0;
+    for(i=1; i<=100; i++)
+    {
+        if(i%10 == 9)//个位是9
+
+    }
+}
