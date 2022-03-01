@@ -501,13 +501,43 @@ int main()
     return 0;
 } */
 
-//数1~100的所有整数中出现多少个9:
+/* //数1~100的所有整数中出现多少个9:
 int main()
 {
     int i = 0;
+    int count = 0;
     for(i=1; i<=100; i++)
     {
         if(i%10 == 9)//个位是9
+            count++;
+        if(i/10 == 9)//十位是9
+            count++;
+    }
+    printf("count = %d\n", count);
+    return 0;
+} */
+
+/* //计算1/1-1/2+1/3-1/4+1/5...+1/99-1/100的值,打印出结果:
+int main()
+{
+    int i = 0;
+    double sum = 0.0;
+    int flag = 1;
+    for(i=1; i<=100; i++)
+    {
+        sum += flag * 1.0/i;
+        flag = -flag;//负负得正
 
     }
+    printf("sum = %lf\n", sum);
+    return 0;
+} */
+
+//求10个整数中的最大值:(也是靠下标找,在不排序的方法下)
+int main()
+{
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int max = 0;//最大值
+
+    return 0;
 }
