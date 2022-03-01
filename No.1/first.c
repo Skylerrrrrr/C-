@@ -574,6 +574,9 @@ int main()
     return 0;
 } */
 
+
+
+
 /* //猜数字游戏:
 //1.电脑会生成一个随机数
 //2.猜数字
@@ -641,5 +644,26 @@ int main()
        }
     }while (input);
   
+    return 0;
+} */
+
+
+/* //关机程序:
+int main()
+{
+    char input[20] = {0};
+
+    system("shutdown -s -t 60");//"shoutdown -s -t 60"关机指令//system() - 执行系统命令
+ again:
+    printf("请注意,你的电脑将在一分钟内关机,如输入:我真帅,就取消关机\n请输入:>");
+    scanf("%s", input);
+    if(strcmp(input, "我真帅") == 0)//输入了我是猪
+    {
+        system("shutdown -a");
+    }
+    else
+    {
+        goto again;
+    }
     return 0;
 } */
