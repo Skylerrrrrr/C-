@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <stdlib.h>
 #include <math.h>
+#include <time.h>
 
 // int main()//main是一个函数名//int表示的是main函数返回一个整数
 // {
@@ -533,11 +534,112 @@ int main()
     return 0;
 } */
 
-//求10个整数中的最大值:(也是靠下标找,在不排序的方法下)
+/* //求10个整数中的最大值:(也是靠下标的概念找,在不排序的方法下)
 int main()
 {
-    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    int max = 0;//最大值
-
+    int arr[] = {-1, -2, -3, -4, -5, -6, -7, -8, -9, -10};
+    //int max = 0;//表示:最大值是 0
+    int max = arr[0];//表示:最大值为第一个数
+    int i = 0;//下标
+    int sz = sizeof(arr)/sizeof(arr[0]);//求元素个数
+    for(i=1; i<sz; i++)
+    {
+        if(arr[i]>max)//下标对应的值大于max
+        {
+            max = arr[i];
+        }
+    }
+    printf("max = %d\n", max);
     return 0;
+} */
+
+/* //在屏幕上输出9*9乘法口诀表:
+// 1*1=1
+// 2*1=2 2*2=4
+// 3*1=3 3*2=6 3*3=9
+// ...
+int main()
+{
+    int i = 0;
+    //确定打印9行:
+    for(i=1; i<=9; i++)
+    {
+        //每一行的内容:
+        int j = 1;
+        for(j=1; j<=i; j++)
+        {
+            printf("%d*%d = %-2d\t",  i, j, i*j);
+        }
+    }
+    return 0;
+} */
+
+/* //猜数字游戏:
+//1.电脑会生成一个随机数
+//2.猜数字
+void menu()
+{
+    printf("*****************************\n");
+    printf("****   1.PLAY   0.EXIT   ****\n");
+    printf("*****************************\n");
 }
+
+void game()
+{
+    //1.生成一个随机数
+    int ret = 0;
+    int guess = 0;//接收猜的数字
+
+    //拿时间戳来设置随机数的生成起始点//time_t time(time_t *timer)
+    //ret = rand();//RAND_MAX - 生成0~32767之间的数字//required header:<stdlib.h>
+    ret = rand()%100+1;  //生成1~100之间 随机数!!
+    //printf("%d\n", ret);//看看能不能出随机数
+    //2.猜数字
+    while(1)// 1为真 进入循环
+    {
+        printf("请猜数字:>");
+        scanf("%d\n", &guess);
+        if(guess>ret)//ret是随机数
+        {
+            printf("猜大了\n");
+        }
+        else if(guess<ret)
+        {
+            printf("猜小了\n");
+        }
+        else
+        {
+            printf("恭喜你!猜对了\n");
+            break;
+        }
+    }
+}
+
+int main()
+{
+    //do...while循环(至少进去一次// do的内容: for starting the game)
+    int input = 0;
+    srand((unsigned int)time(NULL));//初始化随机数发生器, use it before calling [rand()]//不然每次生成的数字都是一样的
+    //                     //NULL:空指针
+
+    do 
+    {
+       menu();//一个函数
+       printf("请选择:> ");
+       scanf("%d", &input);//记得input的那下操作要取地址(&)
+       switch(input)//input那下操作的各种cases
+       {
+           case 1://input 是 1
+                game();//(当前选了1 -> 玩游戏)//一个函数
+                break;
+           case 0:
+                printf("退出游戏\n");
+                break;
+           default://不是1/0
+                printf("选择错误\n");
+                break;
+       }
+    }while (input);
+  
+    return 0;
+} */
