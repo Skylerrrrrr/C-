@@ -667,3 +667,30 @@ int main()
     }
     return 0;
 } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//函数:
+//1.库函数
+//2.自定义函数
+
+//memset(内存设置)
+int main()
+{
+    char arr[] = "hello world";
+    memset(arr, '*', 5);//destination ; 要改成的东西; (first)no. of bytes
+    printf("%s\n", arr);//打印结果:***** world
+    return 0;
+}
+
