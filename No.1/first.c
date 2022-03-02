@@ -745,4 +745,91 @@ int main()
 //     return 0;
 // } */
 
+/* //用函数的方法打印100~200之间的素数 vs. 第480行
+int is_prime(int n)
+{
+    int j = 0;
+    for(j=2; j<n; j++)
+    {
+        if(n%j==0)
+        return 0;
+    }
 
+    return 1;//j是素数的意思
+}
+int main()
+{
+    int i = 0;
+    for(i=100; i<=200; i++)
+    {
+        if(is_prime(i)==1)//判断i是不是素数
+        printf("%d\n", i);
+    }
+    return 0;
+} */
+
+/* //用函数的方法打印1000~2000年的闰年(leap year) vs 440
+int is_leap_year(int y)
+{
+    if((y%4==0 && y%100!=0) || y%400==0)
+        return 1;
+    else 
+        return 0;
+}
+int main()
+{
+    int year = 0;
+    for(year=1000; year<=2000; year++)
+    {
+        if(1 == is_leap_year(year))
+        {
+            printf("%d\n",year);
+        }
+    }
+
+    return 0;
+} */
+
+/* //用函数的方法 在一个数组里找特定数字:if找到了就返回这个数的下标,if找不到 就返回-1
+int binary_search(int arr[], int k, int sz)
+{
+        int left = 0;//左下标
+        int right = sz-1;//右下标
+        
+    while(left<=right)
+    {
+        int mid = (left+right)/2;//中间元素的下标(每次都不一样,所以要放在循环里)
+        if(arr[mid]<k)//arr[mid]是指:中间这个元素
+        {
+            left = mid+1;
+        }
+        else if(arr[mid]>k)
+        {
+            right = mid-1;
+        }
+        else
+        {
+            return mid;//返回这个下标(找到了)
+        }
+    }
+    return -1;
+}
+int main()
+{
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int k = 7;//要找 7
+    int sz = sizeof(arr)/sizeof(arr[0]);
+    
+    int ret = binary_search(arr, k, sz);
+    if(ret==-1)
+    {
+        printf("找不到该数字\n");
+    }
+    else
+    {
+        printf("找到了,下标是: %d\n", ret);
+    }
+    return 0;
+}
+ */
+ 
