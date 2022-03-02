@@ -685,12 +685,64 @@ int main()
 //1.库函数
 //2.自定义函数
 
-//memset(内存设置)
+/* //memset(内存设置)
 int main()
 {
     char arr[] = "hello world";
     memset(arr, '*', 5);//destination ; 要改成的东西; (first)no. of bytes
     printf("%s\n", arr);//打印结果:***** world
     return 0;
+} */
+
+/* //Swap(交换):
+
+//这种写法是不行的,因为 xy ab的地址不一样 swap 也只是 swap了xy instead of ab
+//
+//当实参(ab)传给形参(xy)的时候
+//形参其实是实参的一份临时拷贝
+//所以对形参(xy)的修改是不会改变实参(ab)的
+//
+void Swap(int x, int y)//当不需要返回值的时候就用 void(空的)
+{
+    int tmp = 0;
+    tmp = x;
+    x = y;//a换成b
+    y = tmp;//b换成tmp 而 tmp已经是a
 }
+
+//这种取地址的写法才行
+void Swap2(int* pa, int* pb)
+{
+    int tmp = 0;
+    tmp = *pa ;
+    *pa = *pb;
+    *pb = tmp;
+}
+
+int main()
+{
+    int a = 10;
+    int b = 20;
+    printf("a=%d  b=%d\n", a, b);
+    //Swap(a, b);//调用Swap函数(its an example of 传值调用)
+    Swap2(&a, &b);//调用Swap2函数(its an example of 传址调用)
+    printf("a=%d  b=%d\n", a, b);
+    return 0;
+//swap打印结果: a=10  b=20  
+//             a=10  b=20
+//swap2打印结果:a=10  b=20
+//             a=20  b=10
+}
+
+//Correction: Swap2()
+// int main()
+// {
+//     int a = 10;
+//     int* pa = &a;// pa:指针变量 int* 对应 &
+//     *pa = 20;//解引用操作
+//     printf("%d\n", a);
+//     int b = 20;
+//     return 0;
+// } */
+
 
