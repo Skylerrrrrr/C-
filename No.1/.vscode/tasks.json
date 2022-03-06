@@ -8,8 +8,7 @@
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g",
-
-				"${file}",
+				"${fileDirename}\\*.c",
 				"-o",
 				"${fileDirname}\\${fileBasenameNoExtension}.exe"
 				
