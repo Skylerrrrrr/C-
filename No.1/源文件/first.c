@@ -833,3 +833,41 @@ int main()
 }
  */
  
+
+/* //调用函数,使得num每次增加1:
+void Add(int* p)
+{
+    (*p)++;//加()
+}
+int main()
+{
+    int num = 0;
+    Add(&num);//因为要改变原本的值 ->取地址
+    printf("num = %d\n", num);//1
+    Add(&num);
+    printf("num = %d\n", num);//2
+    Add(&num);
+    printf("num = %d\n", num);//3
+
+    return 0;
+} */
+
+/* //链式函数
+int main()
+{
+    printf("%d", printf("%d", printf("%d", 43)));//打印结果:4321
+//  each of these functions returns the no. of characters printed, or a -ve value if an error occurs.
+//所以思路是43 2 1(倒着想)
+    return 0;
+} */
+
+#include "add.h"//引入自己写的函数要用""
+int main()
+{
+    int a = 10;
+    int b = 20;
+    //函数调用
+    int sum = Add(a, b);
+    printf("%d\n", sum);
+    return 0;
+}
