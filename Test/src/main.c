@@ -861,7 +861,7 @@ int main()
     return 0;
 } */
 
-#include "add.h"//引入自己写的函数要用""
+/* #include "add.h"//引入自己写的函数要用""//切换到powershell输出!(output/main)
 int main()
 {
     int a = 10;
@@ -870,4 +870,82 @@ int main()
     int sum = Add(a, b);
     printf("%d\n", sum);
     return 0;
+} */
+
+
+//递归recursion:
+//递归的限制条件:
+//1. 存在限制条件,当满足这个限制条件的时候,递归便不再继续
+//2. 每次递归调用后就会越来越接近这个限制条件
+// int main()
+// {
+//     printf("呵呵\n" );
+//     main();//这样会stack overflow栈溢出
+//     return 0;
+// }
+
+//接收一个整型值,按照顺序打印它的每一位. e.g input:1234 output: 1 2 3 4.
+// void print(int n)//1234
+// {
+//     if(n>9)//两位数或以上
+//     {
+//         print(n/10);//每次拨一位
+//     }
+//     printf("%d ", n%10);//然后就可以打印被拨的那位了
+// }
+// int main()
+// {
+//     unsigned int num = 0;
+//     scanf("%d", &num);//1234
+//     //递归
+//     print(num);
+//     return 0;
+// }
+
+//计算字符串长度(不创建临时变量) using recursion
+// int my_strlen(char* str)//带*就是传的是整个数组的指针，不带*就是传的字符串首元素的地址
+// {
+//     if(*str != '\0')
+//     {
+//         return 1+my_strlen(str+1);
+//     }
+//     else
+//         return 0;
+//     //计算字符串的长度
+//     // int count = 0;
+//     // while(*str !='\0')//没到头
+//     // {
+//     //     count++;
+//     //     str++;
+//     // }
+//     // return count;
+// }
+// int main()
+// {
+//     char arr[] = "bit";
+//     int len = my_strlen(arr);//arr是数组,数组传参,传过去的不是整个数组,而是首元素的地址
+//     printf("len = %d\n", len);
+//     return 0;
+// }
+
+//求n的阶乘
+int Fac1(int n)
+{
+    int i = 0;
+    int ret = 1;
+    for (i=1; i<=n, i++)
+    {
+        
+    }
 }
+
+int main()
+{
+    int n = 0;
+    int ret = 0;
+    scanf("%d", &n);
+    ret = Fac1(n);
+    printf("%d\n", ret);
+    return 0;
+}
+
