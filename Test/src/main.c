@@ -993,3 +993,57 @@ int main()
     return 0;
 } */
 
+//汉诺塔问题
+//青蛙跳台阶问题
+ 
+
+
+//-----------------------------------------------------
+
+/* 一维数组://在地址中是连续存放的//[]的数字是放下标(start from 0)
+int main()
+{
+    // int arr[10] = {1, 2 ,3};//不完全初始化, 剩下的元素默认为0
+    // char arr2[5] = {'a', 'b'};//注意'',剩下的元素默认为0
+    // char arr3[5] = "ab";//ab\0,剩下的两个元素默认为0
+    char arr4[] = "abcdef";
+    printf("%d\n", sizeof(arr4));//计算arr4所占空间大小=7(\0占了一个 )(单位:字节byte)
+    printf("%d\n", strlen(arr4));//求 字符串 长度=6(不算\0)
+    return 0;
+}
+
+int main()
+{
+    char arr[] = "abc";
+    char arr2[] = {'a', 'b', 'c'};
+    printf("%d\n", sizeof(arr));//4
+    printf("%d\n", sizeof(arr2));//3
+    printf("%d\n", strlen(arr));//3
+    printf("%d\n", strlen(arr2));//random value,因为不知道什么时候遇到\0
+    return 0;
+} */
+
+/* //二维数组://在地址中也是连续储存的(变一条)
+int main()
+{
+    int arr[3][4] = {1, 2, 3, 4 ,5};//[行放的数][列放的数]
+    int arr[][4] ={1, 2, 3, 4, 5, 6, 7, 8}//行的初始化可以省略,但列不行
+    return 0;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
