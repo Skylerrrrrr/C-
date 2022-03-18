@@ -995,7 +995,7 @@ int main()
 
 //汉诺塔问题
 //青蛙跳台阶问题
- 
+
 
 
 //-----------------------------------------------------
@@ -1032,8 +1032,64 @@ int main()
 } */
 
 
+/* //数组作为函数参数:
+void bubble_sort(int arr[], int sz)
+{
+    //确定冒泡排序的趟数(n-1)
+    int i = 0;
+    for( i=0; i<sz-1 ; i++)//范围
+    {
+        int flag = 1;//假设这一趟已经是有序,就不需要掉位了
+        //每一趟冒泡排序
+        int j = 0;
+        for(j=0; j<sz-1-i ; j++)// 掉位操作
+        {
+            if(arr[j] > arr[j+1])//e.g 9 8
+            {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+                flag = 0;//本趟不完全有序
+            }
+        }
+        if (flag==1)//比完所有数据
+        {
+            break;
+        }
+    }
+}
+int main()
+{
+    int arr[] = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+    int i = 0;
+    int sz = sizeof(arr)/sizeof(arr[0]);//   .........所以在这里算好元素个数
+    //                                           .
+    //对arr进行排序,排成升序                       .
+    //arr是数组, 传过去的是arr首元素的地址 &arr[0]  .
+    bubble_sort(arr, sz);//冒泡排序函数
+    for(i=0; i<sz; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    return 0;
 
+//general speaking: 数组名arr就是首元素地址(but 有两个例外)
+//1.sizeof(数组名) - 这是计算整个数组的size(单位:字节)
+//2.&数组名 - 取出的是整个数组的地址,就算result和arr一样, 但意思完全不同
 
+// int main()
+// {
+//     int arr[] = {1, 2, 3, 4, 5};
+//     printf("%p\n", arr);
+//     printf("%p\n", &arr[0]);
+//     printf("%d\n", *arr);// result: 1
+//     //result: 0061FF0C 都是一样的
+//     return 0;
+// }
+
+} */
+
+//数组的应用实例:       三子棋
 
 
 
