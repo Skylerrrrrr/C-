@@ -1076,18 +1076,18 @@ int main()
 //general speaking: 数组名arr就是首元素地址(but 有两个例外)
 //1.sizeof(数组名) - 这是计算整个数组的size(单位:字节)
 //2.&数组名 - 取出的是整个数组的地址,就算result和arr一样, 但意思完全不同
+int main()
+{
+    int arr[] = {1, 2, 3, 4, 5};
+    printf("%p\n", arr);
+    printf("%p\n", &arr[0]);
+    //result: 0061FF0C 都是一样的
+    printf("%d\n", *arr);// result: 1
+    return 0;
+}
 
-// int main()
-// {
-//     int arr[] = {1, 2, 3, 4, 5};
-//     printf("%p\n", arr);
-//     printf("%p\n", &arr[0]);
-//     printf("%d\n", *arr);// result: 1
-//     //result: 0061FF0C 都是一样的
-//     return 0;
-// }
-
-} */
+}*/
+ 
 
 //数组的应用实例:       三子棋
 
