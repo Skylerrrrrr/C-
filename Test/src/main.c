@@ -734,7 +734,7 @@ int main()
 //             a=20  b=10
 }
 
-//Correction: Swap2()
+//Correction: for Swap2()
 // int main()
 // {
 //     int a = 10;
@@ -1087,7 +1087,7 @@ int main()
 }
 
 }*/
- 
+
 
 //数组的应用实例:       三子棋
 
