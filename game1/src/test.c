@@ -11,17 +11,52 @@ void menu()
 
 void game()
 {
+	char ret = 0;
 	//数组-存放走出的棋盘信息
 	char board[ROW][COL] = {0};//全部空格
 	//初始化棋盘
 	InitBoard(board, ROW, COL);
 	//打印棋盘
 	DisplayBoard(board, ROW, COL);
+	//下棋
+	while (1)
+	{
+		//player:
+		PlayerMove(board, ROW, COL);
+		DisplayBoard(board, ROW, COL);
+		//判断玩家是否赢了
+		ret = IsWin();
+		if(ret != 'C')//不是继续 那就停
+		{
+			break;
+		}
+		//computer
+		ComputerMove(board, ROW, COL);
+		DisplayBoard(board, ROW, COL);
+		//判断电脑是否赢了
+		ret = IsWin();
+		if(ret != 'C')
+		{
+			break;
+		}
+	}
+	if (ret == '*')
+	{
+		printf("玩家赢了\n");
+	}
+	else if(ret == '#')
+	{
+		printf("电脑赢了\n");
+	}
+	else
+	{
+		printf("平局\n");
+	}
 }
 void test()
 {
 	int input = 0;
-
+	srand((unsigned int)time(NULL));
 	do
 	{
 		menu();
