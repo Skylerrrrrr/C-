@@ -118,3 +118,5 @@ void ComputerMove(char board[ROW][COL], int row, int col)
     }
     
 }
+
+//完成了 但不见了 就当完成吧 也差不多了
